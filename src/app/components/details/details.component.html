@@ -1,0 +1,14 @@
+
+<form ngsubmit>
+    <button type="submit" (click)="addItemToCart()" routerLink="/donut/{{donutDetails.id}}/cart"> Add to Cart</button>
+    <h2>Name: {{donutDetails.name}}</h2>
+    <h3>Calories: {{donutDetails.calories}}</h3>
+    <h3>Extras: <ul *ngFor="let e of donutDetails.extras">
+            <li>{{ e}}</li>
+            </ul>
+    </h3>
+
+    <input type="image" src="{{donutDetails.photo}}" height="80px" width="80px"/><br>
+    <a href="{{donutDetails.photo_attribution}}">{{donutDetails.photo_attribution}}</a>
+</form>
+

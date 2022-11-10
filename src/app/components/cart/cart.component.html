@@ -1,0 +1,41 @@
+<h2>Shopping Cart ( {{totalQuantity}} ) Items</h2>
+<table>
+    <tr *ngIf="cartItems.length>0">
+    <th width="200px">
+        Donut
+    </th>
+    <th>Calories</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th></th>
+    </tr>
+    <tr *ngFor="let c of cartItems">
+        <td align="center" width="200px">
+            {{c.name}}
+        </td>
+        <td align="left">
+            {{c.calories}}
+        </td>
+        <td align="center">
+            {{c.quantity}}
+        </td>
+        <td align="right">
+            {{c.price|currency}}
+        </td>
+        <td>
+            <button (click)="removeItem(c)">Remove</button>
+        </td>
+    </tr>
+    <tr></tr>
+    
+</table><br>
+<table>
+    <tr>
+        <td>Total Calories: </td>
+        <td> {{totalCal}}</td>
+    </tr><tr></tr><tr></tr>
+    <tr>
+        <td>Total Price: </td>
+        <td> {{totalPrice | currency}}</td>
+    </tr>
+</table>
